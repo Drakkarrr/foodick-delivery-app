@@ -8,11 +8,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI!, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-} as ConnectOptions);
+mongoose
+  .connect(process.env.MONGO_URI!, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  } as ConnectOptions)
+  .then(() => {
+    console.log('Connected to Database');
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 app.get('/test', async (req: Request, res: Response) => {
   res.json({ message: 'Hello World' });

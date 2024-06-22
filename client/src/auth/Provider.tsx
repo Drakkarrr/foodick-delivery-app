@@ -6,14 +6,12 @@ type ProviderProps = {
 };
 
 const Provider = ({ children }: ProviderProps) => {
-  const domain = import.meta.env.REACT_APP_AUTH0_DOMAIN;
-  const clientId = import.meta.env.REACT_APP_AUTH0_CLIENT_ID;
-  const redirectUri = import.meta.env.REACT_APP_AUTH0_REDIRECT_URI;
+  const domain = import.meta.env.VITE_AUTH0_DOMAIN;
+  const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
+  const redirectUri = import.meta.env.VITE_AUTH0_REDIRECT_URI;
 
   if (!domain || !clientId || !redirectUri) {
-    throw new Error(
-      'Please define REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENT_ID, and REACT_APP_AUTH0_REDIRECT_URI in your .env file'
-    );
+    throw new Error('Invalid Configs');
   }
 
   const handleOnRedirectCallback = (appState?: AppState, user?: User) => {

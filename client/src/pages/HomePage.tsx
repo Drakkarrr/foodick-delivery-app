@@ -1,3 +1,5 @@
+import appDownload from '../assets/appDownload.png';
+
 const HomePage = () => {
   return (
     <div className='flex flex-col gap-12'>
@@ -6,6 +8,16 @@ const HomePage = () => {
           Your Next Favorite Chow Awaits
         </h1>
         <span className='text-xl'>Food is just one click away!</span>
+      </div>
+      <div className='grid gap-5 md:grid-cols-2'>
+        <img src='' alt='Landing image' />
+        <div className='flex flex-col items-center justify-center gap-4 text-center'>
+          <span className='text-3xl font-bold tracking-tighter'>
+            Order your favorite food
+          </span>
+          <span>Download our app and order your favorite food</span>
+          <img src={appDownload} alt='' />
+        </div>
       </div>
     </div>
   );

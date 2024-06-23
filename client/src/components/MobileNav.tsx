@@ -10,6 +10,7 @@ import {
 } from './ui/sheet';
 import { Separator } from './ui/separator';
 import { Button } from './ui/button';
+import MobileNavLinks from './MobileNavLinks';
 
 const MobileNav = () => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();

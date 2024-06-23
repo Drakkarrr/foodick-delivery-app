@@ -20,9 +20,7 @@ mongoose
     console.error(err);
   });
 
-app.get('/test', async (req: Request, res: Response) => {
-  res.json({ message: 'Hello World' });
-});
+app.use('/api/user', myUserRoute);
 
 app.listen(8000, () => {
   console.log(`Server is running on localhost:8000`);

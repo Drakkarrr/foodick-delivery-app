@@ -4,9 +4,6 @@ import UserMenu from './UserMenu';
 
 const MainNav = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
-  // const handleLogin = () => {
-  //   loginWithRedirect();
-  // };
 
   return (
     <span className='flex items-center space-x-2'>

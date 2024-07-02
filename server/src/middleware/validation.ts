@@ -18,7 +18,7 @@ export const validateMyUserRequest = [
   body('addressLine1')
     .isString()
     .notEmpty()
-    .withMessage('AddressLine1 must be a string'),
+    .withMessage('Address Line1 must be a string'),
   body('city').isString().notEmpty().withMessage('City must be a string'),
   body('country').isString().notEmpty().withMessage('Country must be a string'),
   handleValidationErrors,
